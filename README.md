@@ -45,10 +45,6 @@ hemera.use(HemeraSql, {
       user: '',
       password: '',
       database: 'test'
-    },
-    pool: {
-      min: 0,
-      max: 7
     }
   }
 })

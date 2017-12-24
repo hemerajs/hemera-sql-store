@@ -52,9 +52,6 @@ hemera.use(HemeraSql, {
     }
   }
 })
-
-// get the knex instance of a different database
-hemera.sqlStore.useDb('test2')
 ```
 
 ## API

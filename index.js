@@ -173,11 +173,12 @@ function hemeraSqlStore(hemera, opts, done) {
   done()
 }
 
-const plugin = Hp(hemeraSqlStore, '>=3')
-plugin[Symbol.for('name')] = require('./package.json').name
-plugin[Symbol.for('options')] = {
-  payloadValidator: 'hemera-joi',
-  knex: {}
-}
-plugin[Symbol.for('dependencies')] = ['hemera-joi']
-module.exports = plugin
+module.exports = Hp(hemeraSqlStore, {
+  hemera: '>=3',
+  name: require('./package.json').name,
+  dependencies: ['hemera-joi'],
+  options: {
+    payloadValidator: 'hemera-joi',
+    knex: {}
+  }
+})

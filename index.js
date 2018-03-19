@@ -174,11 +174,7 @@ function hemeraSqlStore(hemera, opts, done) {
 }
 
 module.exports = Hp(hemeraSqlStore, {
-  hemera: '>=3',
+  hemera: '>=5.0.0-rc.1',
   name: require('./package.json').name,
-  dependencies: ['hemera-joi'],
-  options: {
-    payloadValidator: 'hemera-joi',
-    knex: {}
-  }
+  dependencies: ['hemera-joi']
 })

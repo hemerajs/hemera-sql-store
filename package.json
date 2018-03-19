@@ -1,6 +1,6 @@
 {
   "name": "hemera-sql-store",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Use SQL Database with Hemera",
   "main": "index.js",
   "repository": {

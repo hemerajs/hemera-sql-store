@@ -43,6 +43,10 @@
     "np": "^2.20.1",
     "nuid": "^0.6.14",
     "nyc": "^11.6.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "hemera-joi": "^5.0.1"
+  },
+  "peerDependencies": {
+    "hemera-joi": "^5.0.1"
   }
 }

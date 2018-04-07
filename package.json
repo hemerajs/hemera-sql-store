@@ -1,7 +1,7 @@
 {
   "name": "hemera-sql-store",
   "version": "5.0.0",
-  "description": "Use SQL Database with Hemera",
+  "description": "Generic SQL client for Hemera",
   "main": "index.js",
   "repository": {
     "url": "git@github.com:hemerajs/hemera-sql-store.git",

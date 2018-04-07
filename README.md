@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/hemera-sql-store.svg?maxAge=3600)](https://www.npmjs.com/package/hemera-sql-store)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](#badge)
 
-This is a plugin to use a SQL Database with Hemera. If you need a different driver you can install it easily with `npm install --save <driver>`.
+Generic SQL client for Hemera. If you need a different driver you can install it with `npm install --save <driver>`.
 For more informations see [Knex](http://knexjs.org/).
 
 ## Install

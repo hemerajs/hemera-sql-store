@@ -18,22 +18,37 @@ describe('Hemera-sql-store', function() {
   let hemera
   let testDatabase = 'test'
   let testTable = 'user'
+  let knexSettings = {
+    dialect: 'mysql',
+    connection: {
+      host: '127.0.0.1',
+      user: 'root',
+      password: '',
+      database: testDatabase
+    }
+  }
 
   /**
    * Setup table schema
    *
-   * @param {any} driver
+   * @param {any} knex
    * @param {any} cb
    * @returns
    */
-  function setup(driver, cb) {
-    driver.schema.dropTableIfExists(testTable).asCallback(() => {
-      driver.schema
-        .createTableIfNotExists(testTable, function(table) {
-          table.increments()
-          table.string('name')
-        })
-        .asCallback(cb)
+  function setup(knex, cb) {
+    knex.schema.dropTableIfExists(testTable).asCallback(() => {
+      knex.schema.hasTable(testTable).asCallback(exists => {
+        if (!exists) {
+          knex.schema
+            .createTable(testTable, table => {
+              table.increments()
+              table.string('name')
+            })
+            .asCallback(cb)
+        } else {
+          cb()
+        }
+      })
     })
   }
 
@@ -41,24 +56,12 @@ describe('Hemera-sql-store', function() {
     server = HemeraTestsuite.start_server(PORT, () => {
       const nats = Nats.connect(authUrl)
       hemera = new Hemera(nats)
-      hemera.use(HemeraJoi)
       hemera.use(HemeraSqlStore, {
-        knex: {
-          dialect: 'mysql',
-          connection: {
-            host: '127.0.0.1',
-            user: 'root',
-            password: '',
-            database: testDatabase
-          },
-          pool: {
-            min: 0,
-            max: 7
-          }
-        }
+        knex: knexSettings
       })
       hemera.ready(() => {
-        setup(hemera.sqlStore.useDb(testDatabase), done)
+        const db = Knex(knexSettings)
+        setup(db, done)
       })
     })
   })

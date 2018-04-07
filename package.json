@@ -24,29 +24,25 @@
   "author": "Dustin Deus (https://github.com/StarpTech)",
   "license": "MIT",
   "dependencies": {
-    "hemera-plugin": "1.1.1",
+    "hemera-plugin": "1.1.x",
     "hemera-store": "1.1.x",
-    "hoek": "4.2.x",
     "knex": "0.14.x",
-    "mysql": "2.15.x",
-    "pg": "7.4.x",
-    "pg-hstore": "2.3.x"
+    "hemera-joi": "5.2.x"
   },
   "devDependencies": {
     "code": "^3.0.2",
-    "eslint": "^4.19.0",
-    "eslint-config-hemera": "0.0.2",
-    "hemera-testsuite": "^4.0.0",
-    "mocha": "^5.0.4",
+    "eslint": "^4.19.1",
+    "eslint-config-hemera": "0.0.6",
+    "hemera-testsuite": "^4.0.1",
+    "mocha": "^5.0.5",
     "nats": "^0.8.4",
-    "nats-hemera": "^5.0.0-rc.1",
+    "nats-hemera": "^5.1.3",
     "np": "^2.20.1",
     "nuid": "^0.6.14",
     "nyc": "^11.6.0",
     "prettier": "^1.11.1",
-    "hemera-joi": "^5.0.1"
-  },
-  "peerDependencies": {
-    "hemera-joi": "^5.0.1"
+    "mysql": "^2.15.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2"
   }
 }

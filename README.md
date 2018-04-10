@@ -29,7 +29,8 @@ npm run test
 
 ```js
 const hemera = new Hemera(nats)
-hemera.use(HemeraSql, {
+hemera.use(require('hemera-joi'))
+hemera.use(require('hemera-sql-store'), {
   knex: {
     dialect: 'mysql',
     connection: {

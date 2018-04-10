@@ -56,10 +56,15 @@ describe('Hemera-sql-store', function() {
     server = HemeraTestsuite.start_server(PORT, () => {
       const nats = Nats.connect(authUrl)
       hemera = new Hemera(nats)
+      hemera.use(HemeraJoi)
       hemera.use(HemeraSqlStore, {
         knex: knexSettings
       })
-      hemera.ready(() => {
+      hemera.ready((err) => {
+        if (err) {
+          done(err)
+          return
+        }
         const db = Knex(knexSettings)
         setup(db, done)
       })

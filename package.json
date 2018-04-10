@@ -24,7 +24,7 @@
   "author": "Dustin Deus (https://github.com/StarpTech)",
   "license": "MIT",
   "dependencies": {
-    "hemera-plugin": "1.1.x",
+    "hemera-plugin": "1.3.x",
     "hemera-store": "1.1.x",
     "knex": "0.14.x",
     "hemera-joi": "5.2.x"
@@ -36,7 +36,7 @@
     "hemera-testsuite": "^4.0.1",
     "mocha": "^5.0.5",
     "nats": "^0.8.4",
-    "nats-hemera": "^5.1.3",
+    "nats-hemera": "^5.3.0",
     "np": "^2.20.1",
     "nuid": "^0.6.14",
     "nyc": "^11.6.0",
